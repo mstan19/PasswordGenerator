@@ -3,8 +3,6 @@
 
 // // // Write password to the #password input
 
-  // make a new var that stoes all user preference and use it condition for each var if it is true and add 
-
 
 
 
@@ -45,8 +43,24 @@
 
 
 
+var answer = ""
 // // Add event listener to generate button
-
+document.getElementById("generate").addEventListener("click", 
+function() {
+  answer = prompt("How many characters would you like your password to contain?");
+  
+  if(isNaN(answer)){
+	alert(answer + " is not a number ");
+  return;
+  }
+  
+  if (answer < 8) {
+    alert(answer + " ; password needs to have at least 8 characters");
+  }
+  if (answer > 128) {
+    alert(answer + " ; password cannot have more than 128 characters");
+    return;
+  }
 
   requirementsForPassword();
 
@@ -56,6 +70,7 @@
   //if answer has < 8 then alert them and return
   //if answer over 128 then alert them and return 
 });
+
 
 
 
