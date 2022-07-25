@@ -1,7 +1,53 @@
 // // Assignment Code
-// var generateBtn = document.querySelector("#generate");
 
-// // // Write password to the #password input
+// // Add event listener to generate button
+// This function has two tasks. One: take the input and figure out if it a number. Two: set a limit of the number of characters for the password
+//if answer is not a number then sent back message seend back a valid answer
+  //return
+  //if answer has < 8 then alert them and return
+  //if answer over 128 then alert them and return
+
+var answer = ""
+document.getElementById("generate").addEventListener("click", 
+function() {
+  answer = prompt("How many characters would you like your password to contain?");
+  
+  if(isNaN(answer)){
+    alert(answer + " is not a number ");
+  return;
+  }
+  
+  if (answer < 8) {
+    alert(answer + " ; password needs to have at least 8 characters");
+  }
+  if (answer > 128) {
+    alert(answer + " ; password cannot have more than 128 characters");
+    return;
+  }
+
+  requirementsForPassword(); 
+});
+
+
+//Goal: Create series of prompts that allow the user to select the type characters to inlcude in their password
+// you need the variable names to be included in the parameters so when calling the generatePassword ot will use those variables since they are not global variables
+//make sure to store the user answer into a variable
+function requirementsForPassword() {
+  var requirementsForUpper = confirm("Click OK to confirm including upper characters.");
+  
+  var requirementsForLower = confirm("Click OK to confirm including lower characters.");
+  
+  var requirementsForSpecial = confirm("Click OK to confirm including special characters.");
+  
+  var requirementsForNumber = confirm("Click OK to confirm including numberical characters.");
+  
+  generatePassword (requirementsForUpper, requirementsForLower, requirementsForSpecial, requirementsForNumber);
+}
+
+// Write password to the #password input
+// Goal: create variables for each type of charatcers and store all user preference and them them together
+// make a new var that stoes all user preference and use it condition for each var if it is true and add them together 
+
 function generatePassword (requirementsForUpper, requirementsForLower, requirementsForSpecial, requirementsForNumber) {
   const keys = {
     upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -26,11 +72,10 @@ function generatePassword (requirementsForUpper, requirementsForLower, requireme
     passwordPreference += keys.number;
   }
   modifiedPassword(passwordPreference);
-// console.log(passwordPreference);
-// console.log(answer);
-  // make a new var that stoes all user preference and use it condition for each var if it is true and add 
 }
 
+//Goal: from the last function, it stored all the user preference but now it needs to be match the number of characters that the user wanted 
+//
 function modifiedPassword(passwordPreference) {
 var desirePassword = ""
 //console.log(answer);
@@ -62,72 +107,3 @@ function writePassword(desirePassword) {
   passwordText.value = password;
 
 }
-
-
-
-var answer = ""
-// // Add event listener to generate button
-document.getElementById("generate").addEventListener("click", 
-function() {
-  answer = prompt("How many characters would you like your password to contain?");
-  
-  if(isNaN(answer)){
-    alert(answer + " is not a number ");
-  return;
-  }
-  
-  if (answer < 8) {
-    alert(answer + " ; password needs to have at least 8 characters");
-  }
-  if (answer > 128) {
-    alert(answer + " ; password cannot have more than 128 characters");
-    return;
-  }
-
-  requirementsForPassword();
-
-  //if answer is not a number then sent back message seend back a valid answer
-  //return
-
-  //if answer has < 8 then alert them and return
-  //if answer over 128 then alert them and return 
-});
-
-function requirementsForPassword() {
-  //var userpreference  = confirm("Click OK to confirm including upper characters.")
-  var requirementsForUpper = confirm("Click OK to confirm including upper characters.");
-  
-  var requirementsForLower = confirm("Click OK to confirm including lower characters.");
-  
-  var requirementsForSpecial = confirm("Click OK to confirm including special characters.");
-  
-  var requirementsForNumber = confirm("Click OK to confirm including numberical characters.");
-  
-  generatePassword (requirementsForUpper, requirementsForLower, requirementsForSpecial, requirementsForNumber);
-}
-
-
-
-
-//userpreference
-//use confirm to add the messages requirements: upper, lower, no, special characters ... set as global var
-//put upper in a string....apply to the rest. pspecial charaters 
-//
-//%/ use escape method
-//make sure to store the user answer into a variable
-
-
-
-// var characterAmount = document.getElementById ('chater')
-// function myFunction() {
-//   let text;
-//   let characterAmount = prompt("How many characters would you like your password to contain?", "");
-//   switch(favDrink) {
-//     case "Coca-Cola":
-//       text = "Excellent choice. Coca-Cola is good for your soul.";
-//       break;
-//     c0
-//     default:
-//       text = "I have never heard of that one..";
-//   }
-// generateBtn.addEventListener("click", writePassword);

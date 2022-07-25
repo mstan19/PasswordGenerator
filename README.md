@@ -1,5 +1,5 @@
 # PasswordGenerator
-The purpose of this assignment is to generate a password that contains random upper case, lower case letters, special characters, and/or numerical characters. We are provided with js file that needs to fill in with code to make a unique password everytime we click generate password.
+The purpose of this assignment is to generate a password that contains random upper case, lower case letters, special characters, and/or numerical characters. We are provided with js file that needs to fill in with code to make a unique password everytime we click generate password. The Html and style.css did not need to be modified.
 
 ## Website Screenshot
 This is what the website needs to look like after fixing the starter js file.
