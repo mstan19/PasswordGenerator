@@ -2,6 +2,15 @@
 // var generateBtn = document.querySelector("#generate");
 
 // // // Write password to the #password input
+function generatePassword (requirementsForUpper, requirementsForLower, requirementsForSpecial, requirementsForNumber) {
+  const keys = {
+    upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    lower: "abcdefghijklmnopqrstuvwxyz",
+    special: "!@#$%^&*_-+=",
+    number: "0123456789",
+  }
+
+}
 
 
 
