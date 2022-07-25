@@ -5,7 +5,6 @@
 
 
 
-
   //if upper preference is true then add this to password prefernce
   //
   
@@ -71,7 +70,18 @@ function() {
   //if answer over 128 then alert them and return 
 });
 
-
+function requirementsForPassword() {
+  //var userpreference  = confirm("Click OK to confirm including upper characters.")
+  var requirementsForUpper = confirm("Click OK to confirm including upper characters.");
+  
+  var requirementsForLower = confirm("Click OK to confirm including lower characters.");
+  
+  var requirementsForSpecial = confirm("Click OK to confirm including special characters.");
+  
+  var requirementsForNumber = confirm("Click OK to confirm including numberical characters.");
+  
+  generatePassword (requirementsForUpper, requirementsForLower, requirementsForSpecial, requirementsForNumber);
+}
 
 
 
