@@ -11,66 +11,57 @@ function generatePassword (requirementsForUpper, requirementsForLower, requireme
   }
   var passwordPreference = ""
   if (requirementsForUpper) {
-    passwordPreference += keys.upper
+    passwordPreference += keys.upper;
   }
 
   if (requirementsForLower) {
-    passwordPreference += keys.lower
+    passwordPreference += keys.lower;
   }
 
    if (requirementsForSpecial) {
-    passwordPreference += keys.special
+    passwordPreference += keys.special;
   } 
 
   if (requirementsForNumber) {
-    passwordPreference += keys.number
+    passwordPreference += keys.number;
+  }
+  modifiedPassword(passwordPreference);
+// console.log(passwordPreference);
+// console.log(answer);
+  // make a new var that stoes all user preference and use it condition for each var if it is true and add 
+}
+
+function modifiedPassword(passwordPreference) {
+var desirePassword = ""
+//console.log(answer);
+  for (var i = 0; i < answer; i++) {
+    desirePassword += passwordPreference.charAt(Math.floor(Math.random() * (passwordPreference.length -1)));
+//console.log("stupid");
   }
 
-  var desirePassword 
-  pas= Math.floor(Math.random() * answer);
-
-console.log(passwordPreference);
-console.log(desirePassword);
-console.log(answer);
-  // make a new var that stoes all user preference and use it condition for each var if it is true and add 
+//console.log(desirePassword);
+//writePassword();
+//  return desirePassword;
+writePassword(desirePassword);
 }
 
 
 
   //if upper preference is true then add this to password prefernce
-  //
   
-
-  // var getKey = [
-  //   function upper() {
-  //     return keys.upper[Math.floor(Math.random() * keys.upper.length)];
-  //   },
-  //   function lower() {
-  //     return keys.lower[Math.floor(Math.random() * keys.lower.length)];
-  //   },
-  //   function number() {
-  //     return keys.number[Math.floor(Math.random() * keys.number.length)];
-  //   },
-  //   function symbol() {
-  //     return keys.special[Math.floor(Math.random() * keys.special.length)];
-  //   }
-  // ];
-  // console.log(getKey);
-
-
 // generatePassword();
 
 
 
 //var a  = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+function writePassword(desirePassword) {
+  var password = desirePassword;
+  var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
+  passwordText.value = password;
 
-// }
+}
 
 
 
@@ -81,7 +72,7 @@ function() {
   answer = prompt("How many characters would you like your password to contain?");
   
   if(isNaN(answer)){
-	alert(answer + " is not a number ");
+    alert(answer + " is not a number ");
   return;
   }
   
