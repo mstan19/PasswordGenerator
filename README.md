@@ -10,7 +10,7 @@ This is what the website needs to look like after fixing the starter js file.
 * Adding and calling functions to help perform a certain task.
 * Creating speific variables to serve different purpose.
 * Using different methods to excute different roles (i.e., confirm, alert).
-* Making variable(s) global so other fcuntions can have access to them.
+* Making variable(s) global so other fucntions can have access to them.
 
 ## How to deploy the link application
 * Click on this link for deployed application

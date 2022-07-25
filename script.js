@@ -30,7 +30,7 @@ function() {
 
 
 //Goal: Create series of prompts that allow the user to select the type characters to inlcude in their password
-// you need the variable names to be included in the parameters so when calling the generatePassword ot will use those variables since they are not global variables
+// you need the variable names to be included in the parameters so when calling the generatePassword it will use those variables since they are not global variables
 //make sure to store the user answer into a variable
 function requirementsForPassword() {
   var requirementsForUpper = confirm("Click OK to confirm including upper characters.");
@@ -74,32 +74,18 @@ function generatePassword (requirementsForUpper, requirementsForLower, requireme
   modifiedPassword(passwordPreference);
 }
 
-//Goal: from the last function, it stored all the user preference but now it needs to be match the number of characters that the user wanted 
-//
+//Goal: from the last function, it stored all the user preferences but now it needs to be match the number of characters that the user wanted in their passwords
+//need a for loop that concat all passwordPreference
 function modifiedPassword(passwordPreference) {
 var desirePassword = ""
-//console.log(answer);
   for (var i = 0; i < answer; i++) {
     desirePassword += passwordPreference.charAt(Math.floor(Math.random() * (passwordPreference.length -1)));
-//console.log("stupid");
   }
 
-//console.log(desirePassword);
-//writePassword();
-//  return desirePassword;
 writePassword(desirePassword);
 }
 
-
-
-  //if upper preference is true then add this to password prefernce
-  
-// generatePassword();
-
-
-
-//var a  = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-
+//Goal: Now that we have the passwords match the number of characters that the user wanted in their password. The next goal is to print the password to the #password.
 function writePassword(desirePassword) {
   var password = desirePassword;
   var passwordText = document.querySelector("#password");
@@ -107,3 +93,5 @@ function writePassword(desirePassword) {
   passwordText.value = password;
 
 }
+
+// Remember to call all functions and double check if the variable name that you want access is accessible (meaning global and local)
