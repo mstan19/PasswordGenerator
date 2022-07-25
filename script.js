@@ -9,7 +9,30 @@ function generatePassword (requirementsForUpper, requirementsForLower, requireme
     special: "!@#$%^&*_-+=",
     number: "0123456789",
   }
+  var passwordPreference = ""
+  if (requirementsForUpper) {
+    passwordPreference += keys.upper
+  }
 
+  if (requirementsForLower) {
+    passwordPreference += keys.lower
+  }
+
+   if (requirementsForSpecial) {
+    passwordPreference += keys.special
+  } 
+
+  if (requirementsForNumber) {
+    passwordPreference += keys.number
+  }
+
+  var desirePassword 
+  pas= Math.floor(Math.random() * answer);
+
+console.log(passwordPreference);
+console.log(desirePassword);
+console.log(answer);
+  // make a new var that stoes all user preference and use it condition for each var if it is true and add 
 }
 
 
